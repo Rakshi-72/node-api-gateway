@@ -4,7 +4,7 @@ export const yamlConfig = () => {
   try {
     const readData = readFileSync("dev.yml", "utf8");
     const data = yaml.parse(readData);
-    (data)
+    data;
     data.forEach((element: { name: string; value: string }) => {
       process.env[element.name] = element.value;
     });
